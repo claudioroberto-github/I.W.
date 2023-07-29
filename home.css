@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 30px;
+    background-color: #000000;
+}
+
+::selection{
+background-color: #80fa;
+color: #000000;
+
+}
+
+.ul{
+    display:flex;
+    gap: 2.5rem;
+    cursor: pointer;
+    flex-direction: row;
+    justify-self: start;
+    align-items: center;
+    justify-content: space-around;
+}
+li{
+    display: block;
+    transition: .5s;
+}
+.ul:hover li{
+
+    filter: blur(5px);
+
+}
+.ul li:hover{
+    filter: blur(0px);
+}
+
+
+#picture__input{
+    display: none
+}
+
+.picture{
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    aspect-ratio: 16/9;
+    background-color: #bdbcbc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: 2px dashed;
+    cursor:pointer;
+    font-family: sans-serif;
+    
+}
+.picture:hover{
+    color: #000000;
+    background-color: blue;
+    transition: .5s;
+    box-shadow: 0 0 10px rgb(30, 0, 255)
+    
+}
+
+
+.picture:focus{
+    outline: 2px solid rgb(121, 121, 251);
+}
+.picture__imagem{
+    max-width: 100%;
+}
+.picture__img{
+    max-width: 100%;
+}
+
+.circle{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+
+    animation: hue 5s alternate infinite;
+    background:linear-gradient(90deg,
+     hsla(57,98%,50%,1)0%,
+     hsla(325,67%,56%,1)100%);
+}
+@keyframes hue {to{
+    filter:hue-rotate(iturn);}
+}
+/*Aqui vai ser a segunda parte do site,
+com os filmes no centro e as opções de busca e menu no canto esquerdo da tela*/

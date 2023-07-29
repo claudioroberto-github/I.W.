@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Streaming</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="pesquisa.css">
+    <link rel="stylesheet" href="darkmode.css">
+</head>
+<body>
+    <div class="cabecalho">
+        <ul class="ul">
+            <div class="circle">
+                <label class="picture" for="picture__input" tabindex="0">
+                    <span class="picture__image"><img class="picture__img" src="" alt=""></span>    
+                    <input type="file" accept="image/*" id="picture__input" />
+                </label>
+            </div>
+            <li>oi</li>
+            <li>ola</li>
+            <li>eae</li>
+            <li>bom dia</li>
+            <li>boa tarde</li>
+            <li>boa noite</li>
+        </ul>
+    </div>
+    
+    
+    <div class="pesquisar">
+        <input type="search" class="input__search" placeholder="pesquisar...">
+        <a class="search__btn">
+            <img class="lupa__branca" src="loupe-white.svg" alt="" height="25px" width=25px>
+            <img class="lupa__azul" src="loupe-blue.svg" alt="" height="25px" width=25px>
+        </a>
+    </div>
+    
+    <br><br>
+    
+    </form>
+    
+</body>
+</html>
+    <script>
+
+        const inputFile = document.querySelector('#picture__input');
+        const pictureImage = document.querySelector('.picture__image');
+        const pictureImageTxt = '';
+        pictureImage.innerHTML = pictureImageTxt;
+
+        inputFile.addEventListener('change', function(e) {
+            const inputTarget = e.target;
+            const file = inputTarget.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+
+                reader.addEventListener('load', function(e) {
+                    const readerTarget = e.target;
+
+                    const img = document.createElement('img');
+                    img.src = readerTarget.result;
+                    img.classList.add('picture__img');
+
+                    pictureImage.innerHTML = '';
+                    pictureImage.appendChild(img);
+                });
+
+                reader.readAsDataURL(file);
+            } else {
+                pictureImage.innerHTML = pictureImageTxt;
+            }
+        });
+
+        
+    const chk = document.getElementById('chk')
+
+chk.addEventListener('change', () =>{
+    document.body.classList.toggle('dark')
+});
+
+
+    </script>

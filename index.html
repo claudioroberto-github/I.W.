@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.cantoesquerdo{
+    display:flex;
+    flex-direction:column;
+    justify-content: left;
+    height: 500px;
+    align-items: center;
+    width: 300px;
+    padding-top: 20px;
+    border: 1px solid;
+    border-radius:5%;
+
+}
+
+#menu{
+    border:1px solid;
+    border-radius: 30px;
+    padding-left:15px;
+    padding-right: 15px;
+    height: 30px;
+    outline: 0;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer; 
+    transition: 0.4s;
+    position:relative;
+    left: -70%;
+    color:#fff;
+}
+
+#menu:hover{
+    box-shadow: #fff 0 0 30px;
+}
+
+</style>
+<body>
+    <form class="cantoesquerdo">
+        <div class="menu">
+            <button id="menu">
+                <i><b><h2>menu</h2></b></i>
+            </button>
+        </div>
+
+            <br><br>
+    
+    <div class="oi">
+        <input id="searchbar" type="text" name="searchbar" placeholder="pesquisar..." onkeyup="search()">
+        <ul id="list">
+            <li class="animals">dog</li>
+            <li class="animals">cat</li>
+            <li class="animals">elephant</li>
+            <li class="animals">crocodile</li>
+            <li class="animals">dragon</li>
+        </ul>
+    </div>
+
+    <input type="checkbox" class="checkbox" id="chk"/>
+    <label class="label" for="chk">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </label> 
+
+
+</body>
+</html>
+<script>
+
+function search(){
+    let input__search = document.getElementById('searchbar').value
+    input__search = input__search.toLowerCase()
+
+    let x = document.getElementsByClassName('animals')
+
+    for(i = 0; i < x.length; i++){
+        if(!x[i].innerHTML.toLowerCase().includes(input__search)){
+            x[i].style.display = "none"
+        }
+        else{
+            x[i].style.display = "list-item"
+        }
+    }
+}
+
+</script>
